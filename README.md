@@ -24,13 +24,13 @@ A modern Flutter e-commerce app showcasing products and categories with dynamic 
 ![Home Screen](screenshots/home_screen.png)
 
 ### Category Selected
-![Category Selected](screenshots/category_selected.png)
+![Category Selected](screenshots/category_selected.jpeg)
 
 ### Product Detail Screen
-![Product Detail](screenshots/product_detail.png)
+![Product Detail](screenshots/product_detail.jpeg)
 
 ### Variant Selection
-![Variant Selection](screenshots/variant_selection.png)
+![Variant Selection](screenshots/variant_selection.jpeg)
 
 ---
 
@@ -40,21 +40,36 @@ A modern Flutter e-commerce app showcasing products and categories with dynamic 
 - Dart  
 - Provider (State Management)
 
+## **Planned Improvements**
+- Shopping cart functionality
+- User authentication and login
+- Integration with backend API for real product data
+- Advanced search and filtering options
+- Improved responsive design for web
 ---
 
 ## **Getting Started**
 
-1. Clone the repository:  
+1. **Clone the repository:**  
 ```bash
 git clone https://github.com/your-username/flutter_ecommerce_app.git
+```
 
-Planned Improvements
-Shopping cart functionality
+2. **Navigate to the project directory:**  
+```bash
+cd e-commerce-app-clone
+```
 
-User authentication and login
 
-Integration with backend API for real product data
 
-Advanced search and filtering options
+3. **Install dependencies:**  
+```bash
+flutter pub get
 
-Improved responsive design for web
+```
+
+4. **Run the app:**  
+```bash
+flutter run
+
+```
