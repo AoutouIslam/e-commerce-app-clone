@@ -47,3 +47,14 @@ A modern Flutter e-commerce app showcasing products and categories with dynamic 
 1. Clone the repository:  
 ```bash
 git clone https://github.com/your-username/flutter_ecommerce_app.git
+
+Planned Improvements
+Shopping cart functionality
+
+User authentication and login
+
+Integration with backend API for real product data
+
+Advanced search and filtering options
+
+Improved responsive design for web
