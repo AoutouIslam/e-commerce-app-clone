@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../data/dummy_data.dart';
+import '../models/cart.dart';
 import 'product_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,12 +16,43 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<CartModel>(context);
+
     final displayedProducts = selectedCategoryId == null
         ? products
         : products.where((p) => p.categoryId == selectedCategoryId).toList();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('My Shop')),
+      appBar: AppBar(
+        title: const Text('My Shop'),
+        actions: [
+          Stack(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.shopping_cart),
+                onPressed: () {
+                  // Navigate to cart screen
+                  Navigator.pushNamed(context, '/cart');
+                },
+              ),
+              if (cart.items.isNotEmpty)
+                Positioned(
+                  right: 6,
+                  top: 6,
+                  child: CircleAvatar(
+                    radius: 8,
+                    backgroundColor: Colors.red,
+                    child: Text(
+                      cart.items.length.toString(),
+                      style:
+                          const TextStyle(fontSize: 10, color: Colors.white),
+                    ),
+                  ),
+                ),
+            ],
+          )
+        ],
+      ),
       body: CustomScrollView(
         slivers: [
           // Categories
@@ -43,9 +76,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
                       margin: const EdgeInsets.all(8),
                       padding: const EdgeInsets.all(8),
+                      width: 80,
                       decoration: BoxDecoration(
-                        color:
-                            isSelected ? Colors.blue.shade100 : Colors.white,
+                        color: isSelected
+                            ? Colors.blue.shade100
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                           color: isSelected
@@ -54,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       child: Column(
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(
                             child: Image.asset(
@@ -126,8 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
                               '\$${product.options.first.variants.first.price.toStringAsFixed(2)}',
-                              style:
-                                  const TextStyle(color: Colors.green),
+                              style: const TextStyle(color: Colors.green),
                             ),
                           ),
                         ],

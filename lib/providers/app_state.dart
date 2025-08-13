@@ -8,6 +8,14 @@ class AppState extends ChangeNotifier {
   List<Product> get cartItems => _cartItems;
   List<Product> get wishlist => _wishlist;
 
+  int _selectedIndex = 0; // <-- add selected index for bottom nav
+  int get selectedIndex => _selectedIndex;
+
+  void setPageIndex(int index) {
+    _selectedIndex = index;
+    notifyListeners();
+  }
+
   void addToCart(Product product) {
     _cartItems.add(product);
     notifyListeners();
