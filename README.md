@@ -21,13 +21,13 @@ A modern Flutter e-commerce app showcasing products and categories with dynamic 
 ## **Screenshots**
 
 ### Home Screen
-![Home Screen](screenshots/home_screen.jpeg)
+<img src="screenshots/home_screen.jpeg" alt="Product Detail" width="300" height="600">
 
 ### Product Detail Screen
-![Product Detail](screenshots/product_detail.jpeg)
+<img src="screenshots/product_detail.jpeg" alt="Product Detail" width="300">
 
 ### Variant Selection
-![Variant Selection](screenshots/variant_selection.jpeg)
+<img src="screenshots/variant_selection.jpeg"  alt="Product Detail" width="300">
 
 ---
 
